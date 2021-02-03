@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  {% static "images" as baseUrl %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>RedStore | E Commerce Website</title>
+    <link rel="icon" type="image/icon" href="{% static 'images/logo.png' %}">
+</head>
+<body>
+        <div class="container">
+          <nav class="navbar navbar-expand-lg navbar-light ">
+              <img src="{% static 'images/logo.png' %}" width="125px">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                 
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'account' %}">Account</a>
+                    </li>
+                </ul>
+               <a href="{% url 'cart' %}" ><img src="{% static 'images/cart.png' %}" class="img-fluid" id="cart"></a>
+              </div>
+              
+            </nav>
+            </div>
+
+<section>
+    <div class="container text-center">
+        <h3 id="products">All Products</h3>
+        <div class="row">
+        {% for prod in prods %}  
+       <div class="col-lg-3 col-md-3 col-12">
+        <div class=" card m-2" >
+            <img class="card-img-top" src="{{prod.img.url}}" alt="Card image">
+            <div class="card-body">
+              <h5 class="card-title">{{prod.name}}</h5>
+              <p>${{prod.price}}</p>
+              <a href="{% url 'productdetail' prod.id %}"><button class="explore">View Product</button></a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="buttons container mb-4">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">-></a>
+    </div>
+</section>
+
+<section>
+    <div class="footer container-fluid   text-white text-center ">
+      <div class="row ">
+          <div class="col-lg-3 col-md-3 col-12 mt-2" >
+              <h4>Download Our App </h4>
+              <p>Download App for android and ios mobile phone</p>
+              <img src="{% static 'images/play-store.png' %}" class="img-fluid">
+              <img src="{% static 'images/app-store.png' %}" class="img-fluid">
+            </div>
+            <div class="col-lg-3 col-md-3 col-12 mt-2 " id="footu">
+                <img src="{% static 'images/logo.png' %}" id="foot">
+                <p>Our Purpose Is To Susutain Make the Pleasure and Benefits of Sports Accesible to the many.</p>
+              </div>
+              <div class="col-lg-3 col-md-3 col-12 mt-2">
+                <h5>Useful Links</h5>
+                <p>Coupons</p>
+                <p>Blog Post</p>
+                <p>Return Policy</p>
+                <p>Join Affiliate</p>
+            
+              </div>
+              <div class="col-lg-3 col-md-3 col-12 mt-2">
+                <h5>Follow Us</h5>
+                <p>Facebook</p>
+                <p>Twitter</p>
+                <p>Instagram</p>
+                <p>YouTube</p>
+              </div>
+      </div>
+      
+      <p id="copy" class="pt-3">Copyright 2021-Veeresh Halli</p>
+  </div>
+</section>
+
+
+
+
+</body>
+</html>

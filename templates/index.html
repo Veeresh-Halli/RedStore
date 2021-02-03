@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>RedStore | E Commerce Website</title>
+    <link rel="icon" type="image/icon" href="{% static 'images/logo.png' %}">
+</head>
+<body>
+    <div class="header">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <img src="{% static 'images/logo.png' %}" width="125px">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item"></li>
+                  <a class="nav-link" href="{% url 'products' %}">Products</a> 
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account' %}">Account</a>
+                  </li>
+                  
+                  <li class="nav-link">Hi, {{sdata}}</li>
+                 
+                  {% if user.is_authenticated %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                  </li>
+                {% endif %}
+              </ul>
+              <a href="{% url 'cart'  %}"> <img src="{% static 'images/cart.png' %}" class="img-fluid" id="cart"></a> 
+            </div>
+            
+          </nav>
+ 
+          <section>
+            <div class=" ex row">
+                   <div class="col-lg-6 col-md-6 col-12 pl-4">
+                    <h1 class="text">Give Your Workout<br> A New Style! </h1>
+                    <p>Success Comes to those who work,even when they fail.</p>
+                    <a href="#" class="explore">Explore Now>>>></a>
+                   </div>
+                   <div class="col-lg-6 col-md-6 col-12">
+                       <img src="{% static 'images/image1.png' %}" class="img-fluid">
+                      </div>
+                   
+                </div>
+         </section>
+    
+
+</div>   
+ 
+</div>
+   
+<section>
+    <div class="container">
+<div class="row">
+    <div class="col-lg-4 col-md4-col-12 p-1">
+        <img src="{% static 'images/category-1.jpg' %}" class="img-fluid">
+    </div>
+    <div class="col-lg-4 col-md4-col-12 p-1 ">
+        <img src="{% static 'images/category-2.jpg' %}" class="img-fluid">
+    </div>
+    <div class="col-lg-4 col-md4-col-12  p-1">
+        <img src="{% static 'images/category-3.jpg' %}" class="img-fluid">
+    </div>
+</div>
+</div>
+
+
+</section>
+
+
+  <section>
+      <div class="container">
+      <h1 class="text-center mt-5">Featured Products</h1>
+      <hr class="w-25 bg-dark mx-auto">
+     <div class="row text-center">
+        
+       <div class="col-lg-3 col-md-3 col-12">
+        <div class="trans card m-2" >
+            <img class="card-img-top" src="{% static 'images/product-1.jpg' %}" alt="Card image">
+            <div class="card-body">
+              <h5 class="card-title">Red Printed T-Shirt</h5>
+              <p>$100</p>
+            </div>
+          </div>
+        </div>
+    
+        <div class="col-lg-3 col-md-3 col-12">
+            <div class="trans card m-2 ">
+                <img class="card-img-top" src="{% static 'images/product-2.jpg' %}" alt="Card image">
+                <div class="card-body">
+                  <h5 class="card-title">HRX Sports Shoes</h5>
+                  <p>$1300</p>
+                </div>
+              </div>
+            </div>
+            <div class="trans col-lg-3 col-md-3 col-12">
+                <div class="card m-2" >
+                    <img class="card-img-top" src="{% static 'images/product-3.jpg' %}" alt="Card image">
+                    <div class="card-body">
+                      <h5 class="card-title">HRX Trackpant</h5>
+                      <p>$1600</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="trans col-lg-3 col-md-3 col-12">
+                    <div class="card m-2" >
+                        <img class="card-img-top" src="{% static 'images/product-4.jpg' %}" alt="Card image">
+                        <div class="card-body ">
+                          <h5 class="card-title">Blue Printed T-Shirt</h5>
+                          <p>$1350</p>
+                        </div>
+                      </div>
+                    </div>
+            
+     </div>
+     
+    </div>
+  </section>
+
+  <section>
+      <div class="container">
+    <h1 class="text-center mt-5">Latest Products</h1>
+    <hr class="w-25 bg-dark mx-auto">
+    <div class=" row text-center">
+        <div class=" col-lg-3 col-md-3 col-12">
+         <div class="trans card m-2" >
+             <img class="card-img-top" src="{% static 'images/product-5.jpg' %}" alt="Card image">
+             <div class="card-body">
+               <h5 class="card-title">Puma Grey Shoes</h5>
+               <p>$5000</p>
+             </div>
+           </div>
+         </div>
+         <div class=" col-lg-3 col-md-3 col-12">
+             <div class="trans card m-2 ">
+                 <img class="card-img-top" src="{% static 'images/product-6.jpg' %}" alt="Card image">
+                 <div class="card-body">
+                   <h5 class="card-title">Black Printed T-Shirt</h5>
+                   <p>$1100</p>
+                 </div>
+               </div>
+             </div>
+             <div class=" col-lg-3 col-md-3 col-12">
+                 <div class="trans card m-2" >
+                     <img class="card-img-top" src="{% static 'images/product-7.jpg' %}" alt="Card image">
+                     <div class="card-body">
+                       <h5 class="card-title">HRX set 0f 3 Socks</h5>
+                       <p>$600</p>
+                     </div>
+                   </div>
+                 </div>
+                 <div class=" col-lg-3 col-md-3 col-12">
+                     <div class="trans card m-2" >
+                         <img class="card-img-top" src="{% static 'images/product-8.jpg' %}" alt="Card image">
+                         <div class="card-body ">
+                           <h5 class="card-title">Black Fossil Watch</h5>
+                           <p>$5550</p>
+                         </div>
+                       </div>
+                     </div>
+                     <div class=" col-lg-3 col-md-3 col-12">
+                        <div class="trans card m-2" >
+                            <img class="card-img-top" src="{% static 'images/product-9.jpg' %}" alt="Card image">
+                            <div class="card-body">
+                              <h5 class="card-title">Black Sports Wtach</h5>
+                              <p>$1600</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class=" col-lg-3 col-md-3 col-12">
+                            <div class="trans card m-2 ">
+                                <img class="card-img-top" src="{% static 'images/product-10.jpg' %}" alt="Card image">
+                                <div class="card-body">
+                                  <h5 class="card-title">Black HRX Shoes</h5>
+                                  <p>$5300</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class=" col-lg-3 col-md-3 col-12">
+                                <div class="trans card m-2" >
+                                    <img class="card-img-top" src="{% static 'images/product-11.jpg' %}" alt="Card image">
+                                    <div class="card-body">
+                                      <h5 class="card-title">Grey Nike Shoest</h5>
+                                      <p>$7600</p>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class=" col-lg-3 col-md-3 col-12">
+                                    <div class="trans card m-2" >
+                                        <img class="card-img-top" src="{% static 'images/product-12.jpg' %}" alt="Card image">
+                                        <div class="card-body ">
+                                          <h5 class="card-title">HRX Black Trackpant</h5>
+                                          <p>$1350</p>
+                                        </div>
+                                      </div>
+                                    </div>
+      </div>
+      
+ 
+  
+    </div>
+
+  </section>
+
+  <section class="bg container-fluid mb-5">
+    <div class="ex row">
+        <div class="col-lg-6 col-md-6 col-12 pl-5">
+            <img src="{% static 'images/exclusive.png' %}" class="img-fluid">
+        </div>
+        <div class="col-lg-6 col-md-6 col-12 mt-5 mb-5 pl-5">
+            <p>Exclusive Available on RedStore</p>
+            <h1>Smart Band 4</h1>
+            <p class="para">The Mi Band 4 features a 39.8% larger(than Mi Band 3) AMOLED color full-touch display with adjustable brightness,so everything is clear as can be.</p>
+            <a href="#" class="explore ">Buy Now >></a>
+        </div>
+    </div>
+
+
+</section>
+
+
+
+<section>
+    <div class="container mt-5 ">
+        <div class=" row text-center">
+            <div class="col-lg-4 col-md-4 col-12">
+              <div class="trans card m-2" >
+                  <img class="card-img-top" src="{% static 'images/user-1.png' %}" alt="Card image">
+                  <div class="card-body ">
+                    <h4 class="card-title">Sean Parkar</h4>
+                    <p>$1350</p>
+                  </div>  
+            </div>
+         </div>
+
+         <div class="col-lg-4 col-md-4 col-12">
+          <div class="trans card m-2" >
+              <img class=" card-img-top" src="{% static 'images/user-2.png' %}" alt="Card image">
+              <div class="card-body ">
+                <h4 class="card-title">Mike Smith</h4>
+                <p>$1350</p>
+              </div>  
+        </div>
+     </div>
+
+     <div class="col-lg-4 col-md-4 col-12">
+      <div class=" trans card m-2" >
+          <img class="card-img-top" src="{% static 'images/user-3.png' %}" alt="Card image">
+          <div class="card-body ">
+            <h4 class="card-title">Mabel Joe</h4>
+            <p>$1350</p>
+          </div>  
+    </div>
+ </div>
+
+
+     </div>
+    </div>
+</section> 
+
+  <section>
+      <div class="container-fluid pl-5 ">
+            <div class="row"  >
+              <div class="brand col-lg-3 col-md-3 col-12" >
+              <img  src="{% static 'images/logo-coca-cola.png' %}" class="img-fluid">
+             </div>
+             <div class="brand col-lg-3 col-md-3 col-12" >
+                <img src="{% static 'images/logo-godrej.png' %}" class="img-fluid">
+               </div>
+               <div class="brand col-lg-3 col-md-3 col-12" >
+                <img src="{% static 'images/logo-oppo.png' %}" class="img-fluid">
+               </div>
+               <div class="brand col-lg-3 col-md-3 col-12">
+                <img src="{% static 'images/logo-philips.png' %}" class="img-fluid">
+               </div>
+            </div>
+        </div>
+  </section>
+
+
+  <section>
+      <div class="footer container-fluid   text-white text-center ">
+        <div class="row ">
+            <div class="col-lg-3 col-md-3 col-12 mt-2" >
+                <h4>Download Our App </h4>
+                <p>Download App for android and ios mobile phone</p>
+                <img src="{% static 'images/play-store.png' %}" class="img-fluid">
+                <img src="{% static 'images/app-store.png' %}" class="img-fluid">
+              </div>
+              <div class="col-lg-3 col-md-3 col-12 mt-2 " id="footu">
+                  <img src="{% static 'images/logo.png' %}" id="foot">
+                  <p>Our Purpose Is To Susutain Make the Pleasure and Benefits of Sports Accesible to the many.</p>
+                </div>
+                <div class="col-lg-3 col-md-3 col-12 mt-2">
+                  <h5>Useful Links</h5>
+                  <p>Coupons</p>
+                  <p>Blog Post</p>
+                  <p>Return Policy</p>
+                  <p>Join Affiliate</p>
+              
+                </div>
+                <div class="col-lg-3 col-md-3 col-12 mt-2">
+                  <h5>Follow Us</h5>
+                  <p>Facebook</p>
+                  <p>Twitter</p>
+                  <p>Instagram</p>
+                  <p>YouTube</p>
+                </div>
+        </div>
+        
+        <p id="copy" class="pt-3">Copyright 2021-Veeresh Halli</p>
+    </div>
+  </section>
+
+
+</body>
+</html
